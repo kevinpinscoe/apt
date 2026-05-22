@@ -1,0 +1,7 @@
+Origin: kevinpinscoe
+Label: kevinpinscoe
+Codename: stable
+Architectures: amd64 arm64
+Components: main
+Description: kevinpinscoe Go tools
+SignWith: 8CD9AAACEE8B5AFB7607BC2B300FD9BDDA1BF809
