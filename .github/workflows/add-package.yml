@@ -44,6 +44,18 @@ jobs:
             --pattern "*.deb" \
             --dir /tmp/debs
 
+      - name: Debug GPG state
+        env:
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        run: |
+          echo "=== Secret keys ==="
+          gpg --list-secret-keys 2>&1
+          echo "=== Agent KEYINFO ==="
+          gpg-connect-agent 'KEYINFO --list' /bye 2>&1 || true
+          echo "=== Passphrase length: ${#GPG_PASSPHRASE} ==="
+          echo "=== Test direct sign ==="
+          echo "testdata" | gpg --batch --clearsign 2>&1 && echo "SIGN OK" || echo "SIGN FAILED"
+
       - name: Add packages to repo
         run: |
           for deb in /tmp/debs/*.deb; do
