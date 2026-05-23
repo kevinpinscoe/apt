@@ -22,13 +22,16 @@ jobs:
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: |
           mkdir -p ~/.gnupg && chmod 700 ~/.gnupg
-          printf 'allow-preset-passphrase\n' > ~/.gnupg/gpg-agent.conf
+          # Kill any pre-running agent, then write config so the fresh agent picks it up
+          gpgconf --kill gpg-agent 2>/dev/null || true
+          printf 'allow-preset-passphrase\nallow-loopback-pinentry\n' > ~/.gnupg/gpg-agent.conf
+          printf 'no-tty\npinentry-mode loopback\n' > ~/.gnupg/gpg.conf
           echo "$GPG_PRIVATE_KEY" | gpg --batch --import
           FINGERPRINT=$(gpg --with-colons --list-secret-keys | awk -F: '/^fpr/{print $10; exit}')
           echo "${FINGERPRINT}:6:" | gpg --import-ownertrust
           PRESET_BIN="$(gpgconf --list-dirs libexecdir)/gpg-preset-passphrase"
           while IFS= read -r KEYGRIP; do
-            printf '%s' "$GPG_PASSPHRASE" | "$PRESET_BIN" --preset "$KEYGRIP"
+            printf '%s' "$GPG_PASSPHRASE" | "$PRESET_BIN" --preset "$KEYGRIP" || true
           done < <(gpg --with-keygrip --with-colons --list-secret-keys | awk -F: '/^grp/{print $10}')
 
       - name: Download .deb files from release
