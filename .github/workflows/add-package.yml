@@ -28,8 +28,13 @@ jobs:
           echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
           printf '%s\n%s\n' "allow-loopback-pinentry" "allow-preset-passphrase" > ~/.gnupg/gpg-agent.conf
           gpg-connect-agent reloadagent /bye
-          KEYGRIP=$(gpg --with-keygrip --with-colons --list-secret-keys | awk -F: '/^grp/{print $10; exit}')
-          printf '%s' "$GPG_PASSPHRASE" | "$(gpgconf --list-dirs libexecdir)/gpg-preset-passphrase" --preset "$KEYGRIP"
+          PRESET_BIN="$(gpgconf --list-dirs libexecdir)/gpg-preset-passphrase"
+          while IFS= read -r KEYGRIP; do
+            printf '%s' "$GPG_PASSPHRASE" | "$PRESET_BIN" --preset "$KEYGRIP"
+          done < <(gpg --with-keygrip --with-colons --list-secret-keys | awk -F: '/^grp/{print $10}')
+
+      - name: Verify GPG signing works
+        run: echo "test" | gpg --armor --detach-sign --output /dev/null -
 
       - name: Download .deb files from release
         env:
@@ -44,7 +49,7 @@ jobs:
       - name: Add packages to repo
         run: |
           for deb in /tmp/debs/*.deb; do
-            reprepro -b . includedeb stable "$deb"
+            reprepro -V -b . includedeb stable "$deb"
           done
 
       - name: Commit and push
