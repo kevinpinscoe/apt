@@ -1,0 +1,15 @@
+Package: get-wx
+Version: 1.0.1
+Architecture: arm64
+Maintainer: Kevin P. Inscoe <kevin.inscoe@gmail.com>
+Installed-Size: 4544
+Homepage: https://github.com/kevinpinscoe/get-wx
+Priority: optional
+Section: 
+Filename: pool/main/g/get-wx/get-wx_1.0.1_arm64.deb
+Size: 1975902
+SHA256: fa347591d617ff44c40319cc85f9a960742e3094187f7d87798aa20dc98ebb77
+SHA1: 2c5c6b2b8c06f45c32481bdb7bf79f17b97464de
+MD5sum: 8c75bb893727286501f006e9883b458e
+Description: Eastern Tennessee weather forecast fetcher
+

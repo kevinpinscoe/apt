@@ -1,0 +1,5 @@
+Component: main
+Origin: kevinpinscoe
+Label: kevinpinscoe
+Architecture: arm64
+Description: kevinpinscoe Go tools
