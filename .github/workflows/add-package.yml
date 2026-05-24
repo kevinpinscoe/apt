@@ -23,22 +23,23 @@ jobs:
         run: |
           mkdir -p ~/.gnupg ~/.local/bin && chmod 700 ~/.gnupg
 
-          # Custom pinentry: returns GPG_PASSPHRASE from the agent's inherited environment.
-          # The agent is launched below with GPG_PASSPHRASE set; when reprepro triggers a
-          # signing operation the agent forks this script, which echoes the passphrase back
-          # over the assuan protocol — no TTY, no preset-passphrase format guessing needed.
+          # Custom pinentry: reads passphrase from ~/.gnupg/.pinentry-pass written below.
+          # The daemon may not pass arbitrary env vars to child processes, so a file under
+          # $HOME/.gnupg (which IS inherited) is the reliable hand-off mechanism.
           # Script is base64-encoded to avoid heredoc indentation issues in YAML block scalars.
-          echo "IyEvYmluL2Jhc2gKUEFTUz0iJHtHUEdfUEFTU1BIUkFTRSUkJ1xuJ30iCnByaW50ZiAnT0sgUGxlYXNlZCB0byBtZWV0IHlvdVxuJwp3aGlsZSBJRlM9IHJlYWQgLXIgbGluZTsgZG8KICBjbWQ9IiR7bGluZSUlICp9IgogIGNhc2UgIiRjbWQiIGluCiAgICBHRVRQSU4pIHByaW50ZiAnRCAlc1xuT0tcbicgIiRQQVNTIiA7OwogICAgQllFKSAgICBwcmludGYgJ09LIGNsb3NpbmcgY29ubmVjdGlvblxuJzsgZXhpdCAwIDs7CiAgICAqKSAgICAgIHByaW50ZiAnT0tcbicgOzsKICBlc2FjCmRvbmUK" \
+          echo "IyEvYmluL2Jhc2gKUEFTUz0kKGNhdCAiJEhPTUUvLmdudXBnLy5waW5lbnRyeS1wYXNzIiAyPi9kZXYvbnVsbCkKcHJpbnRmICdPSyBQbGVhc2VkIHRvIG1lZXQgeW91CicKd2hpbGUgSUZTPSByZWFkIC1yIGxpbmU7IGRvCiAgY21kPSIke2xpbmUlJSAqfSIKICBjYXNlICIkY21kIiBpbgogICAgR0VUUElOKSBwcmludGYgJ0QgJXMKT0sKJyAiJFBBU1MiIDs7CiAgICBCWUUpICAgIHByaW50ZiAnT0sgY2xvc2luZyBjb25uZWN0aW9uCic7IGV4aXQgMCA7OwogICAgKikgICAgICBwcmludGYgJ09LCicgOzsKICBlc2FjCmRvbmUK" \
             | base64 -d > ~/.local/bin/pinentry-env
           chmod +x ~/.local/bin/pinentry-env
+
+          # Write passphrase to file; strip trailing newline (op CLI appends one)
+          printf '%s' "${GPG_PASSPHRASE%$'\n'}" > ~/.gnupg/.pinentry-pass
+          chmod 600 ~/.gnupg/.pinentry-pass
 
           # Kill any running agent; wait for socket to disappear before writing config
           gpgconf --kill gpg-agent 2>/dev/null || true
           SOCK=$(gpgconf --list-dirs agent-socket 2>/dev/null || true)
           [ -n "$SOCK" ] && timeout 3 bash -c "while [ -S '$SOCK' ]; do sleep 0.1; done" || true
           printf 'pinentry-program %s/.local/bin/pinentry-env\n' "$HOME" > ~/.gnupg/gpg-agent.conf
-
-          # Launch agent now so it inherits GPG_PASSPHRASE from this step's environment
           gpgconf --launch gpg-agent
 
           echo "$GPG_PRIVATE_KEY" | gpg --batch --import
