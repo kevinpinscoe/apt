@@ -21,21 +21,39 @@ jobs:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: |
-          mkdir -p ~/.gnupg && chmod 700 ~/.gnupg
-          # Kill any running agent; wait for its socket to disappear before writing config
+          mkdir -p ~/.gnupg ~/.local/bin && chmod 700 ~/.gnupg
+
+          # Custom pinentry: returns GPG_PASSPHRASE from the agent's inherited environment.
+          # The agent is launched below with GPG_PASSPHRASE set; when reprepro triggers a
+          # signing operation the agent forks this script, which echoes the passphrase back
+          # over the assuan protocol — no TTY, no preset-passphrase format guessing needed.
+          cat > ~/.local/bin/pinentry-env <<'EOF'
+#!/bin/bash
+PASS="${GPG_PASSPHRASE%$'\n'}"
+printf 'OK Pleased to meet you\n'
+while IFS= read -r line; do
+  cmd="${line%% *}"
+  case "$cmd" in
+    GETPIN) printf 'D %s\nOK\n' "$PASS" ;;
+    BYE)    printf 'OK closing connection\n'; exit 0 ;;
+    *)      printf 'OK\n' ;;
+  esac
+done
+EOF
+          chmod +x ~/.local/bin/pinentry-env
+
+          # Kill any running agent; wait for socket to disappear before writing config
           gpgconf --kill gpg-agent 2>/dev/null || true
           SOCK=$(gpgconf --list-dirs agent-socket 2>/dev/null || true)
           [ -n "$SOCK" ] && timeout 3 bash -c "while [ -S '$SOCK' ]; do sleep 0.1; done" || true
-          printf 'allow-preset-passphrase\nallow-loopback-pinentry\n' > ~/.gnupg/gpg-agent.conf
+          printf 'pinentry-program %s/.local/bin/pinentry-env\n' "$HOME" > ~/.gnupg/gpg-agent.conf
+
+          # Launch agent now so it inherits GPG_PASSPHRASE from this step's environment
           gpgconf --launch gpg-agent
+
           echo "$GPG_PRIVATE_KEY" | gpg --batch --import
           FINGERPRINT=$(gpg --with-colons --list-secret-keys | awk -F: '/^fpr/{print $10; exit}')
           echo "${FINGERPRINT}:6:" | gpg --import-ownertrust
-          # Preset passphrase; gpg-preset-passphrase reads the line stripping the terminator,
-          # which avoids injecting a trailing newline that may be present in the secret value
-          PRESET_BIN="$(gpgconf --list-dirs libexecdir)/gpg-preset-passphrase"
-          KEYGRIP=$(gpg --with-keygrip --with-colons --list-secret-keys | awk -F: '/^grp/{print $10; exit}')
-          printf '%s' "$GPG_PASSPHRASE" | "$PRESET_BIN" --preset "$KEYGRIP"
 
       - name: Download .deb files from release
         env:
