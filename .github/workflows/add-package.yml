@@ -27,19 +27,9 @@ jobs:
           # The agent is launched below with GPG_PASSPHRASE set; when reprepro triggers a
           # signing operation the agent forks this script, which echoes the passphrase back
           # over the assuan protocol — no TTY, no preset-passphrase format guessing needed.
-          cat > ~/.local/bin/pinentry-env <<'EOF'
-#!/bin/bash
-PASS="${GPG_PASSPHRASE%$'\n'}"
-printf 'OK Pleased to meet you\n'
-while IFS= read -r line; do
-  cmd="${line%% *}"
-  case "$cmd" in
-    GETPIN) printf 'D %s\nOK\n' "$PASS" ;;
-    BYE)    printf 'OK closing connection\n'; exit 0 ;;
-    *)      printf 'OK\n' ;;
-  esac
-done
-EOF
+          # Script is base64-encoded to avoid heredoc indentation issues in YAML block scalars.
+          echo "IyEvYmluL2Jhc2gKUEFTUz0iJHtHUEdfUEFTU1BIUkFTRSUkJ1xuJ30iCnByaW50ZiAnT0sgUGxlYXNlZCB0byBtZWV0IHlvdVxuJwp3aGlsZSBJRlM9IHJlYWQgLXIgbGluZTsgZG8KICBjbWQ9IiR7bGluZSUlICp9IgogIGNhc2UgIiRjbWQiIGluCiAgICBHRVRQSU4pIHByaW50ZiAnRCAlc1xuT0tcbicgIiRQQVNTIiA7OwogICAgQllFKSAgICBwcmludGYgJ09LIGNsb3NpbmcgY29ubmVjdGlvblxuJzsgZXhpdCAwIDs7CiAgICAqKSAgICAgIHByaW50ZiAnT0tcbicgOzsKICBlc2FjCmRvbmUK" \
+            | base64 -d > ~/.local/bin/pinentry-env
           chmod +x ~/.local/bin/pinentry-env
 
           # Kill any running agent; wait for socket to disappear before writing config
