@@ -13,3 +13,18 @@ SHA1: 2c5c6b2b8c06f45c32481bdb7bf79f17b97464de
 MD5sum: 8c75bb893727286501f006e9883b458e
 Description: Eastern Tennessee weather forecast fetcher
 
+Package: skills-tui
+Version: 2.5.1
+Architecture: arm64
+Maintainer: Kevin P. Inscoe <kevin.inscoe@gmail.com>
+Installed-Size: 3200
+Homepage: https://github.com/kevinpinscoe/skills-tui
+Priority: optional
+Section: 
+Filename: pool/main/s/skills-tui/skills-tui_2.5.1_arm64.deb
+Size: 1208258
+SHA256: 2f6c8102c997c2cfb8aa18a95977d5095ace539a07422ef64bcedf79ceacb166
+SHA1: 57aa431e45c27449e4ce7f816ac5a9d4fa3fcd05
+MD5sum: d65a56f8665d5df8c3a226d870714b28
+Description: Interactive TUI skill chooser
+
