@@ -14,6 +14,22 @@ SHA1: 38ffe9d91fb9702657b2001c6f71afe5076d8da9
 MD5sum: f3c7186f79bc62dc0aabf0bb4c5e818c
 Description: Eastern Tennessee weather forecast fetcher
 
+Package: metar-tool
+Version: 1.0.1
+Architecture: amd64
+Architecture-Variant: amd64v1
+Maintainer: Kevin P. Inscoe <kevin.inscoe@gmail.com>
+Installed-Size: 5032
+Homepage: https://github.com/kevinpinscoe/metar-tool
+Priority: optional
+Section: 
+Filename: pool/main/m/metar-tool/metar-tool_1.0.1_amd64.deb
+Size: 2252766
+SHA256: 90f9c304b4039ba35a7d29091d4d061998b4ecb05f2c3be60b1bb8fea817babc
+SHA1: 146640f5cd78160660638d35a16986ce9771bd52
+MD5sum: ac6cfbae8c91d8bc9701627c1306035e
+Description: METAR aviation weather decoder
+
 Package: skills-tui
 Version: 2.5.1
 Architecture: amd64
