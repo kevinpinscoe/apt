@@ -1,3 +1,33 @@
+Package: check-git-branch
+Version: 1.0.0
+Architecture: arm64
+Maintainer: Kevin P. Inscoe <kevin.inscoe@gmail.com>
+Installed-Size: 1920
+Homepage: https://github.com/kevinpinscoe/tools
+Priority: optional
+Section: 
+Filename: pool/main/c/check-git-branch/check-git-branch_1.0.0_arm64.deb
+Size: 824814
+SHA256: ae8601aeede67edf44519e16fc177ef834bea82e38f8865b31e3c5b73b1fadf0
+SHA1: 014d75e265086653bdc7d9fb87bc6f24d4e3ce46
+MD5sum: 2f45786fa7da7c380739406401170b4d
+Description: Check git branch status across repositories
+
+Package: check-git-repos
+Version: 1.0.0
+Architecture: arm64
+Maintainer: Kevin P. Inscoe <kevin.inscoe@gmail.com>
+Installed-Size: 1984
+Homepage: https://github.com/kevinpinscoe/tools
+Priority: optional
+Section: 
+Filename: pool/main/c/check-git-repos/check-git-repos_1.0.0_arm64.deb
+Size: 863608
+SHA256: 36737750c8eba8f9550128f79ada8eecd0083bfa73e51eea803cb9667ec4558f
+SHA1: 3e22a6b8e01d5d81caa5f2b85b7058d3f4a8f493
+MD5sum: 9b64792017edf533c5a7d89c2d503018
+Description: Check git repositories for uncommitted or unpushed changes
+
 Package: get-wx
 Version: 1.0.1
 Architecture: arm64
@@ -27,6 +57,21 @@ SHA256: 3130836706280eda3886b5bca4a66f1fd13c184403e6121e7893b44a50f78733
 SHA1: a22251e0ab02c2ce63f5e1bd1ace0d647f401900
 MD5sum: bc1466e0dfdb6b509d3418b10e55405f
 Description: METAR aviation weather decoder
+
+Package: pause
+Version: 1.0.0
+Architecture: arm64
+Maintainer: Kevin P. Inscoe <kevin.inscoe@gmail.com>
+Installed-Size: 1664
+Homepage: https://github.com/kevinpinscoe/tools
+Priority: optional
+Section: 
+Filename: pool/main/p/pause/pause_1.0.0_arm64.deb
+Size: 708576
+SHA256: 67c55311b3638659b7f877bafdf5e8dcbb9c7983f732c79532032a45a37e6586
+SHA1: bbaa4a303e9432c6c648dfafe1cec971af3167ac
+MD5sum: c2515b9e37158cd0111a0fee2604fdfa
+Description: Pause terminal output until a keypress
 
 Package: skills-tui
 Version: 2.5.1
