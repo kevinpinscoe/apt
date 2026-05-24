@@ -50,6 +50,8 @@ jobs:
 
       - name: Add packages to repo
         run: |
+          echo "=== agent keyinfo before reprepro ==="
+          gpg-connect-agent 'KEYINFO --list' /bye 2>&1
           for deb in /tmp/debs/*.deb; do
             reprepro -b . includedeb stable "$deb"
           done
