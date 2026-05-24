@@ -1,28 +1,28 @@
 Origin: kevinpinscoe
 Label: kevinpinscoe
 Codename: stable
-Date: Sun, 24 May 2026 02:41:51 UTC
+Date: Sun, 24 May 2026 10:23:11 UTC
 Architectures: amd64 arm64
 Components: main
 Description: kevinpinscoe Go tools
 MD5Sum:
- cfeaec7a94e012b263baad302b97948d 3170 main/binary-amd64/Packages
- 3c3192663d4a4bae9bbaea16d912de83 1150 main/binary-amd64/Packages.gz
+ 8fe7afd7fc694e06e7a8a6f0337efe1b 3170 main/binary-amd64/Packages
+ 2cea2f691d221622df4bf77c6458495f 1158 main/binary-amd64/Packages.gz
  9eb081a22556ce8a570a5709e8ac6cff 112 main/binary-amd64/Release
- abc2751655e3685e94c1f505a3cb0c52 2990 main/binary-arm64/Packages
- efdee76adf34daef5adb078fbb648d63 1133 main/binary-arm64/Packages.gz
+ 6398adc6d0577d3560a8a5b75c82b73b 2990 main/binary-arm64/Packages
+ 449f054a0245a5fa43e511be0e75f6b4 1140 main/binary-arm64/Packages.gz
  7cae56a95ffc2ca8388e83fc08a22310 112 main/binary-arm64/Release
 SHA1:
- 84c21c43e7a5f750fd8841ca08741846b4aa72ab 3170 main/binary-amd64/Packages
- 6cf1e9eaffd183b16b31bf393f6236fb2756b742 1150 main/binary-amd64/Packages.gz
+ 9067f0c6ad92b99308a7c9b629e22853b332eb64 3170 main/binary-amd64/Packages
+ bee431f20029aae73ca1303dbffe3028e8640e7f 1158 main/binary-amd64/Packages.gz
  d8f312e5fbadf035fb05c65bd893636fa56602b5 112 main/binary-amd64/Release
- c64e7dae7c87777aaef422f12de93d2af9108ed2 2990 main/binary-arm64/Packages
- bad8359377a25b5498f6be1b95edadc4ab62627f 1133 main/binary-arm64/Packages.gz
+ 0d86a82f89ec53b976ad74242d56599882839fc5 2990 main/binary-arm64/Packages
+ 444d7284ae52f6ea44925fb286d4dd61dd3dd108 1140 main/binary-arm64/Packages.gz
  e4b8577ed76d35614f71e5fe5a1924fc3ba11e1a 112 main/binary-arm64/Release
 SHA256:
- 83c800a25f0726ac5d2659220744d91035152e9ddc40b35743a8e58758608c59 3170 main/binary-amd64/Packages
- 3db671538844b169f66429a2aea2b83ff0597ad07e25b1c5becea512e0ed8ae3 1150 main/binary-amd64/Packages.gz
+ 74d789960a52e90075b45748a79bc38ce0e411d6ef783c6c37fceb4f8d6fba5d 3170 main/binary-amd64/Packages
+ 66b45e82b0adde0931c013812365d8586b227e183113e6c31ce63ae6e66adc44 1158 main/binary-amd64/Packages.gz
  ac31c533fc27b86d35dc7ab0879bebad33b16bd278c837c8560bae5277bfc889 112 main/binary-amd64/Release
- 690cfd15666986d07926949f105266f7faf3c87d26d1aa992d047c8b586719cd 2990 main/binary-arm64/Packages
- e5810200049e5cce4bbcfa130f183351bee3e44c749a734f00f61decfdbf17f0 1133 main/binary-arm64/Packages.gz
+ b951e60768bfbdb93bff4b269b84ace1cd5446c70a26c67b55b4048be8e36106 2990 main/binary-arm64/Packages
+ 1b7952e29ab69140105e9ea7e1c354643468298c3359b565ec22129d1b4564f9 1140 main/binary-arm64/Packages.gz
  6ffefa106d84361a78b5bb0bd39a33374524d8c96c3c23bec913645bcdc5b2ad 112 main/binary-arm64/Release
