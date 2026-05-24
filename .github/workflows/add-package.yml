@@ -31,8 +31,8 @@ jobs:
             | base64 -d > ~/.local/bin/pinentry-env
           chmod +x ~/.local/bin/pinentry-env
 
-          # Write passphrase to file; strip trailing newline (op CLI appends one)
-          printf '%s' "${GPG_PASSPHRASE%$'\n'}" > ~/.gnupg/.pinentry-pass
+          # Write passphrase to file; strip any trailing \r or \n (op CLI appends \n)
+          printf '%s' "$GPG_PASSPHRASE" | tr -d '\r\n' > ~/.gnupg/.pinentry-pass
           chmod 600 ~/.gnupg/.pinentry-pass
 
           # Kill any running agent; wait for socket to disappear before writing config
