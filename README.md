@@ -8,7 +8,7 @@ Debian APT repository for [kevinpinscoe](https://github.com/kevinpinscoe) Go too
 curl -sL https://kevinpinscoe.github.io/apt/gpg.key \
   | sudo gpg --dearmor -o /etc/apt/keyrings/kevinpinscoe.gpg
 
-echo "deb [signed-by=/etc/apt/keyrings/kevinpinscoe.gpg] \
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/kevinpinscoe.gpg] \
   https://kevinpinscoe.github.io/apt stable main" \
   | sudo tee /etc/apt/sources.list.d/kevinpinscoe.list
 
