@@ -14,19 +14,19 @@ MD5sum: 8f8eb99ee4863ba559d8692520883c7e
 Description: AWS Linux memory diagnostics
 
 Package: check-git-branch
-Version: 1.0.0
+Version: 1.0.1
 Architecture: arm64
 Maintainer: Kevin P. Inscoe <kevin.inscoe@gmail.com>
 Installed-Size: 1920
 Homepage: https://github.com/kevinpinscoe/tools
 Priority: optional
 Section: 
-Filename: pool/main/c/check-git-branch/check-git-branch_1.0.0_arm64.deb
-Size: 824814
-SHA256: ae8601aeede67edf44519e16fc177ef834bea82e38f8865b31e3c5b73b1fadf0
-SHA1: 014d75e265086653bdc7d9fb87bc6f24d4e3ce46
-MD5sum: 2f45786fa7da7c380739406401170b4d
-Description: Check git branch status across repositories
+Filename: pool/main/c/check-git-branch/check-git-branch_1.0.1_arm64.deb
+Size: 825012
+SHA256: 57ec9216a3fd731b5d5915897e50afe9faf87a66eecb019c07dd07901f0d7bce
+SHA1: f92f3d493c365f63809ae68aeea7c5af9222fa3d
+MD5sum: d91ca0ce0d6cc46cea06f1b32e59efeb
+Description: Scan git repos for non-default branches or leftover local branches
 
 Package: check-git-repos
 Version: 1.10.1
