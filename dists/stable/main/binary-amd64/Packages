@@ -31,18 +31,18 @@ MD5sum: 16ca533115b799a55b8114091c111928
 Description: Check git branch status across repositories
 
 Package: check-git-repos
-Version: 1.10.0
+Version: 1.10.1
 Architecture: amd64
 Maintainer: Kevin P. Inscoe <kevin.inscoe@gmail.com>
-Installed-Size: 3064
+Installed-Size: 2048
 Homepage: https://github.com/kevinpinscoe/tools
 Priority: optional
 Section: 
-Filename: pool/main/c/check-git-repos/check-git-repos_1.10.0_amd64.deb
-Size: 1859584
-SHA256: 638e92687332438595798cbbf508303d8879a8e630b51f1d0626e75222c623e9
-SHA1: 2a321621db3dfbc38ea09d0bf1cbda665b1f728b
-MD5sum: 430b2be40b9d30436ca247db86024e0c
+Filename: pool/main/c/check-git-repos/check-git-repos_1.10.1_amd64.deb
+Size: 942610
+SHA256: 072cced389d2275f12f596bfa24e980423d0d4284e6db04c4c443b0ab2a99ca2
+SHA1: b5e5bc363b119347d8743e52e7ed37771afb3181
+MD5sum: 66e75e86e04ac34704d327853cd7028e
 Description: Scan git repositories under a root directory for ahead/behind/diverged/uncommitted state
 
 Package: get-wx
