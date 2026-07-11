@@ -61,18 +61,18 @@ MD5sum: f3c7186f79bc62dc0aabf0bb4c5e818c
 Description: Eastern Tennessee weather forecast fetcher
 
 Package: menu-app
-Version: 1.0.1
+Version: 1.0.2
 Architecture: amd64
 Maintainer: Kevin P. Inscoe <kevin.inscoe@gmail.com>
 Installed-Size: 3896
 Homepage: https://github.com/kevinpinscoe/tools
 Priority: optional
 Section: 
-Filename: pool/main/m/menu-app/menu-app_1.0.1_amd64.deb
-Size: 1580284
-SHA256: 5b57303f88a5b3665f6196b83d126ef34e1b42c74a0417bd47f7483a5960b3cb
-SHA1: c1599d322447a328a9f487585e5cf7e50e382938
-MD5sum: fd211fd885ee624f20341bb10ed65e7c
+Filename: pool/main/m/menu-app/menu-app_1.0.2_amd64.deb
+Size: 1580282
+SHA256: 8ca7b5a69f9f0971e55fdb89f3a3786eb3f55a5b2ae30ac9cc247b434ee0f461
+SHA1: 8f2d44577ee07fa7d4bb57ae1006d3e0394a138e
+MD5sum: eb7ee1c119759d0e2f8c03039a80272b
 Description: Run repository scripts from a simple TUI menu
 
 Package: metar-tool
