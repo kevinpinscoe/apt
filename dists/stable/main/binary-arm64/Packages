@@ -89,18 +89,18 @@ MD5sum: fa7486598c874e9fa59bff7ca2f99146
 Description: METAR aviation weather decoder
 
 Package: pause
-Version: 1.1.1
+Version: 1.1.2
 Architecture: arm64
 Maintainer: Kevin P. Inscoe <kevin.inscoe@gmail.com>
 Installed-Size: 1664
 Homepage: https://github.com/kevinpinscoe/tools
 Priority: optional
 Section: 
-Filename: pool/main/p/pause/pause_1.1.1_arm64.deb
-Size: 708686
-SHA256: a0308963351db85ca5c5fcafc06866660a3efa8ed75d2ef0f8770904df411027
-SHA1: 3bdbfecbac937e4afe0f0712cd2aed6de81f7b46
-MD5sum: dc4bacc75192b087da2bbcb828928f63
+Filename: pool/main/p/pause/pause_1.1.2_arm64.deb
+Size: 708688
+SHA256: 316609c8e52724a67fb6b074eb2586bbcc3740fee277e6450eb84b8ed2ec90e6
+SHA1: ea5620c2cc0842199764fff183382ae22f186616
+MD5sum: d3b5012410eb8f2fe5635c0cde4fed77
 Description: Sleep for N seconds with a live countdown status line on stderr
 
 Package: skills-tui
