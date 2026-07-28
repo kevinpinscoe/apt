@@ -1,16 +1,16 @@
 Package: aws-linux-memory-tools
-Version: 1.0.2
+Version: 1.0.3
 Architecture: arm64
 Maintainer: Kevin P. Inscoe <kevin.inscoe@gmail.com>
 Installed-Size: 1344
 Homepage: https://github.com/kevinpinscoe/aws-linux-memory-tools
 Priority: optional
 Section: 
-Filename: pool/main/a/aws-linux-memory-tools/aws-linux-memory-tools_1.0.2_arm64.deb
-Size: 558172
-SHA256: bf8a94432eeea257ea0982fbec24580be2d6f3ad08918364d2e1a8612afaa202
-SHA1: 6a67c31bf9977efd75a3da9ccd809dc618c4bbb4
-MD5sum: 3a9d374cede948d5d7cc54224d81e70e
+Filename: pool/main/a/aws-linux-memory-tools/aws-linux-memory-tools_1.0.3_arm64.deb
+Size: 558170
+SHA256: 8378a13a53ad9262d85503b9ec17d0f6127c229a70f225327bfdc251685cb2b6
+SHA1: ac0e1b31c9dc8dcb6b83cc0471bb39c8ffce4d6f
+MD5sum: b6259d1f5f8916ab6663f41e93e9bded
 Description: AWS Linux memory diagnostics
 
 Package: check-git-branch
