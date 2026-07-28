@@ -44,18 +44,18 @@ MD5sum: 59bd47feecfd200872247b8226facd33
 Description: Scan git repositories under a root directory for ahead/behind/diverged/uncommitted state
 
 Package: get-wx
-Version: 1.0.3
+Version: 1.0.4
 Architecture: arm64
 Maintainer: Kevin P. Inscoe <kevin.inscoe@gmail.com>
 Installed-Size: 4544
 Homepage: https://github.com/kevinpinscoe/get-wx
 Priority: optional
 Section: 
-Filename: pool/main/g/get-wx/get-wx_1.0.3_arm64.deb
-Size: 1975910
-SHA256: cf7b461419e31b4bd3c7f0bbd26e2922699c3dcb92dfe43deea2e4546dcde53e
-SHA1: 3ba77b2b4011315952536413320f0f99624c782d
-MD5sum: 28f73a3d24fa912495d58581f235ba39
+Filename: pool/main/g/get-wx/get-wx_1.0.4_arm64.deb
+Size: 1975900
+SHA256: 33f7480a888067d2e8eb582c407329c2a93f5a622aac2bb16383d2ca272a2285
+SHA1: 17b9ecca80715efdfe8acda985f8b2973a235ce4
+MD5sum: 613edc9dba9d0e91eb7bbe6a45ee7831
 Description: Eastern Tennessee weather forecast fetcher
 
 Package: menu-app
