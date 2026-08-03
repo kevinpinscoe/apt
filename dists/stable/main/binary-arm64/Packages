@@ -74,18 +74,18 @@ MD5sum: 3ca6e914412076aab85b1d7966f076b8
 Description: Run repository scripts from a simple TUI menu
 
 Package: metar-tool
-Version: 1.1.3
+Version: 1.1.4
 Architecture: arm64
 Maintainer: Kevin P. Inscoe <kevin.inscoe@gmail.com>
 Installed-Size: 4864
 Homepage: https://github.com/kevinpinscoe/metar-tool
 Priority: optional
 Section: 
-Filename: pool/main/m/metar-tool/metar-tool_1.1.3_arm64.deb
-Size: 2079308
-SHA256: 8f0559c9c2eec4b185252188f25a05de99c3fed4a0ca619db422e31df694a52f
-SHA1: 156434181b99af453d17bb364b63fc2d27763709
-MD5sum: d173758aa7bad717aed5b4af77b977c9
+Filename: pool/main/m/metar-tool/metar-tool_1.1.4_arm64.deb
+Size: 2079306
+SHA256: da90e4872c98c0e56256f389592aff2d5d5daa8cb615f441b0ed46909c493e74
+SHA1: 5d0707c40d6e4f8db111549073236b0631c3a8df
+MD5sum: fc04998b9c20ce1652d83ae66237a898
 Description: METAR aviation weather decoder
 
 Package: pause
