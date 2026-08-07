@@ -30,18 +30,18 @@ MD5sum: a752388ed570be0fa75d16a729c77aa2
 Description: Scan git repos for non-default branches or leftover local branches
 
 Package: check-git-repos
-Version: 1.11.0
+Version: 1.12.0
 Architecture: amd64
 Maintainer: Kevin P. Inscoe <kevin.inscoe@gmail.com>
-Installed-Size: 2056
+Installed-Size: 2060
 Homepage: https://github.com/kevinpinscoe/tools
 Priority: optional
 Section: 
-Filename: pool/main/c/check-git-repos/check-git-repos_1.11.0_amd64.deb
-Size: 948788
-SHA256: 4ece733f9366653ff9b24dfda023e584aa3e163e31d6e7b1851ffe3ffa803ee4
-SHA1: 0504053b91bf0cd25104bc1cc192543ab59bb107
-MD5sum: 129227bee702bfadb3a3d0410e2a2118
+Filename: pool/main/c/check-git-repos/check-git-repos_1.12.0_amd64.deb
+Size: 949480
+SHA256: 0db6de4c2d78f32c9f8bc00d9ab94bf51c31288ab1ff05744fbcc0be0b756816
+SHA1: 967e4b560eaf244935e11bb0bbef70440c3e6a2e
+MD5sum: 27a7f122e364b0f25b8f5d1e16fd7838
 Description: Scan git repositories under a root directory for ahead/behind/diverged/uncommitted state
 
 Package: get-wx
