@@ -107,18 +107,18 @@ MD5sum: b7ae2a2a0f8498fe293fdb7571cc55d2
 Description: Sleep for N seconds with a live countdown status line on stderr
 
 Package: skills-tui
-Version: 3.0.2
+Version: 4.0.0
 Architecture: amd64
 Architecture-Variant: amd64v1
 Maintainer: Kevin P. Inscoe <kevin.inscoe@gmail.com>
-Installed-Size: 3216
+Installed-Size: 3224
 Homepage: https://github.com/kevinpinscoe/skills-tui
 Priority: optional
 Section: 
-Filename: pool/main/s/skills-tui/skills-tui_3.0.2_amd64.deb
-Size: 1295166
-SHA256: 8f44a07fb044339c04c2be883cb0b891b56f811fa4ef0a2ded386419c4146b73
-SHA1: 2e066c33d8a24a3bf2cc619b10b4e05d745a7cb7
-MD5sum: 5f45f7d8a724d9f9577ff5aec560affa
+Filename: pool/main/s/skills-tui/skills-tui_4.0.0_amd64.deb
+Size: 1298760
+SHA256: 6b13328587fc99dea31ad0d3417d9189b0171dfb9d1586d14936cbd6bd5666d9
+SHA1: cef9911b2fbe35e9922b8546bb6bfb2075618f4f
+MD5sum: 889c53c92fba1e03f317ec59609edff6
 Description: Interactive TUI skill chooser
 
