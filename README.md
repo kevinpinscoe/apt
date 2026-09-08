@@ -1,6 +1,6 @@
 # kevinpinscoe/apt
 
-Debian APT repository for [kevinpinscoe](https://github.com/kevinpinscoe) Go tools, served via GitHub Pages.
+Debian APT repository for [kevinpinscoe](https://github.com/kevinpinscoe) tools and apps, served via GitHub Pages.
 
 ## Install
 
@@ -22,6 +22,7 @@ sudo apt install aws-linux-memory-tools
 sudo apt install check-git-branch
 sudo apt install check-git-repos
 sudo apt install get-wx
+sudo apt install marky
 sudo apt install menu-app
 sudo apt install metar-tool
 sudo apt install pause
@@ -36,6 +37,7 @@ sudo apt install skills-tui
 | `check-git-branch` | Scan git repos for non-default branches or leftover local branches |
 | `check-git-repos` | Scan git repositories under a root directory for ahead/behind/diverged/uncommitted state |
 | `get-wx` | Eastern Tennessee weather forecast fetcher |
+| `marky` | Apostrophe-inspired Markdown editor (arm64 / Raspberry Pi only) |
 | `menu-app` | Run repository scripts from a simple TUI menu |
 | `metar-tool` | METAR aviation weather decoder |
 | `pause` | Sleep for N seconds with a live countdown status line on stderr |
@@ -49,6 +51,6 @@ Fingerprint: `8CD9AAACEE8B5AFB7607BC2B300FD9BDDA1BF809`
 
 ## How packages land here
 
-Each Go tool repo dispatches a `new-release` event to this repo when a tag is pushed.
+Each source repo dispatches a `new-release` event to this repo when a tag is pushed.
 The `add-package.yml` workflow downloads the `.deb` files from the GitHub release,
 adds them via `reprepro`, and pushes the updated repo back to `main`.
