@@ -6,6 +6,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   add:
@@ -71,3 +72,11 @@ jobs:
           git add -A
           git diff --cached --quiet || git commit -m "add ${{ github.event.client_payload.repo }} ${{ github.event.client_payload.tag }}"
           git push
+
+      - name: Trigger Pages deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # A GITHUB_TOKEN-authored push doesn't trigger other workflows' `on: push`,
+          # so the deploy has to be kicked explicitly.
+          gh workflow run deploy-pages.yml --repo "${{ github.repository }}" --ref main
