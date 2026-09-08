@@ -58,6 +58,26 @@ SHA1: 17b9ecca80715efdfe8acda985f8b2973a235ce4
 MD5sum: 613edc9dba9d0e91eb7bbe6a45ee7831
 Description: Eastern Tennessee weather forecast fetcher
 
+Package: marky
+Version: 0.1.2
+License: unknown
+Vendor: Kevin P. Inscoe <kevin.inscoe@gmail.com>
+Architecture: arm64
+Maintainer: Kevin P. Inscoe <kevin.inscoe@gmail.com>
+Installed-Size: 489996
+Depends: libgtk-3-0, libnotify4, libnss3, libxss1, libxtst6, xdg-utils, libatspi2.0-0, libuuid1, libsecret-1-0
+Recommends: libappindicator3-1
+Homepage: https://github.com/kevinpinscoe/marky
+Priority: optional
+Section: default
+Filename: pool/main/m/marky/marky_0.1.2_arm64.deb
+Size: 120319180
+SHA256: 9446f9cf5c96d069b89b2be7f29e7d451c4f13e0f44059d802214fb2cd79c052
+SHA1: b136b6b44a44cb7940387e47613032bed8cda88f
+MD5sum: 76830d57b620db28af899f203d349243
+Description: Apostrophe-inspired Markdown editor
+  Apostrophe-inspired Markdown editor built with Electron, React, and TypeScript.
+
 Package: menu-app
 Version: 2.0.1
 Architecture: arm64
