@@ -18,20 +18,28 @@ sudo apt update
 Then install any available tool:
 
 ```bash
-sudo apt install get-wx
-sudo apt install metar-tool
-sudo apt install skills-tui
 sudo apt install aws-linux-memory-tools
+sudo apt install check-git-branch
+sudo apt install check-git-repos
+sudo apt install get-wx
+sudo apt install menu-app
+sudo apt install metar-tool
+sudo apt install pause
+sudo apt install skills-tui
 ```
 
 ## Available packages
 
 | Package | Description |
 |---|---|
-| `get-wx` | Eastern Tennessee weather forecast fetcher |
-| `metar-tool` | METAR aviation weather decoder |
-| `skills-tui` | Interactive TUI skill chooser |
 | `aws-linux-memory-tools` | AWS Linux memory diagnostics |
+| `check-git-branch` | Scan git repos for non-default branches or leftover local branches |
+| `check-git-repos` | Scan git repositories under a root directory for ahead/behind/diverged/uncommitted state |
+| `get-wx` | Eastern Tennessee weather forecast fetcher |
+| `menu-app` | Run repository scripts from a simple TUI menu |
+| `metar-tool` | METAR aviation weather decoder |
+| `pause` | Sleep for N seconds with a live countdown status line on stderr |
+| `skills-tui` | Interactive TUI skill chooser |
 
 ## GPG key
 
