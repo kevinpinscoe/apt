@@ -1,0 +1,72 @@
+name: Remove package
+
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: Package name to remove from the stable distribution
+        required: true
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  remove:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          lfs: true
+
+      - name: Install reprepro
+        run: sudo apt-get install -y reprepro
+
+      - name: Import GPG signing key
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        run: |
+          mkdir -p ~/.gnupg ~/.local/bin && chmod 700 ~/.gnupg
+
+          # Custom pinentry: reads passphrase from ~/.gnupg/.pinentry-pass written below.
+          # The daemon may not pass arbitrary env vars to child processes, so a file under
+          # $HOME/.gnupg (which IS inherited) is the reliable hand-off mechanism.
+          # Script is base64-encoded to avoid heredoc indentation issues in YAML block scalars.
+          echo "IyEvYmluL2Jhc2gKUEFTUz0kKGNhdCAiJEhPTUUvLmdudXBnLy5waW5lbnRyeS1wYXNzIiAyPi9kZXYvbnVsbCkKcHJpbnRmICdPSyBQbGVhc2VkIHRvIG1lZXQgeW91CicKd2hpbGUgSUZTPSByZWFkIC1yIGxpbmU7IGRvCiAgY21kPSIke2xpbmUlJSAqfSIKICBjYXNlICIkY21kIiBpbgogICAgR0VUUElOKSBwcmludGYgJ0QgJXMKT0sKJyAiJFBBU1MiIDs7CiAgICBCWUUpICAgIHByaW50ZiAnT0sgY2xvc2luZyBjb25uZWN0aW9uCic7IGV4aXQgMCA7OwogICAgKikgICAgICBwcmludGYgJ09LCicgOzsKICBlc2FjCmRvbmUK" \
+            | base64 -d > ~/.local/bin/pinentry-env
+          chmod +x ~/.local/bin/pinentry-env
+
+          # Write passphrase to file; strip any trailing \r or \n (op CLI appends \n)
+          printf '%s' "$GPG_PASSPHRASE" | tr -d '\r\n' > ~/.gnupg/.pinentry-pass
+          chmod 600 ~/.gnupg/.pinentry-pass
+
+          # Kill any running agent; wait for socket to disappear before writing config
+          gpgconf --kill gpg-agent 2>/dev/null || true
+          SOCK=$(gpgconf --list-dirs agent-socket 2>/dev/null || true)
+          [ -n "$SOCK" ] && timeout 3 bash -c "while [ -S '$SOCK' ]; do sleep 0.1; done" || true
+          printf 'pinentry-program %s/.local/bin/pinentry-env\n' "$HOME" > ~/.gnupg/gpg-agent.conf
+          gpgconf --launch gpg-agent
+
+          echo "$GPG_PRIVATE_KEY" | gpg --batch --import
+          FINGERPRINT=$(gpg --with-colons --list-secret-keys | awk -F: '/^fpr/{print $10; exit}')
+          echo "${FINGERPRINT}:6:" | gpg --import-ownertrust
+
+      - name: Remove package from repo
+        run: |
+          reprepro -b . remove stable "${{ inputs.package }}"
+          reprepro -b . deleteunreferenced
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "remove ${{ inputs.package }}"
+          git push
+
+      - name: Trigger Pages deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run deploy-pages.yml --repo "${{ github.repository }}" --ref main
