@@ -4,35 +4,35 @@ Hash: SHA512
 Origin: kevinpinscoe
 Label: kevinpinscoe
 Codename: stable
-Date: Tue, 08 Sep 2026 23:07:54 UTC
+Date: Mon, 14 Sep 2026 11:02:09 UTC
 Architectures: amd64 arm64
 Components: main
 Description: kevinpinscoe Go tools
 MD5Sum:
- 4ec300e7fc5b04186c02d3af9477efd2 4221 main/binary-amd64/Packages
- 2915f116835c9b5b1bddbd3a7af5774e 1531 main/binary-amd64/Packages.gz
+ 2dca06d852645a056ddf671ee962fd49 5143 main/binary-amd64/Packages
+ 20994abcf980372af0cefae1aaddf2f9 1942 main/binary-amd64/Packages.gz
  9eb081a22556ce8a570a5709e8ac6cff 112 main/binary-amd64/Release
- 8bcddb91c54937e0c4f53192a117693d 4899 main/binary-arm64/Packages
- 48fdb1ff2cce876674354da289fdd971 1824 main/binary-arm64/Packages.gz
+ 613d12710b875c1946a55360859d2840 5791 main/binary-arm64/Packages
+ 53c8130ce37a973d08ddacb9baf43495 2214 main/binary-arm64/Packages.gz
  7cae56a95ffc2ca8388e83fc08a22310 112 main/binary-arm64/Release
 SHA1:
- b50ec8bcfe7b23cafb53f30f3669e1ca07795a33 4221 main/binary-amd64/Packages
- 51a9bd5d0a27b1debf4c542c753f5e3f2b29824e 1531 main/binary-amd64/Packages.gz
+ 5cf025ef08ef0761ee6c7b7b1ae6d9aa8fa75389 5143 main/binary-amd64/Packages
+ b346e8ae2161a4bc09d1aa268a5f13a7689353f8 1942 main/binary-amd64/Packages.gz
  d8f312e5fbadf035fb05c65bd893636fa56602b5 112 main/binary-amd64/Release
- 917fd9856159c3c2760606cf40ebf8cf80f9b1c1 4899 main/binary-arm64/Packages
- 6b6e80409d7407f01f5da2a86915ed3589f40eab 1824 main/binary-arm64/Packages.gz
+ d6d48a549725c737c54788ae85464d38011f0de7 5791 main/binary-arm64/Packages
+ b9b16c59cea72672141958fc7a74ec6b1f12d110 2214 main/binary-arm64/Packages.gz
  e4b8577ed76d35614f71e5fe5a1924fc3ba11e1a 112 main/binary-arm64/Release
 SHA256:
- 4934ec882a6ecf85527403c01beddd46783cf8bffbcb7a0dcc789ebbfaf2c8a2 4221 main/binary-amd64/Packages
- dd53a100feda9ed517ae5aa1c49a22839240cca22b5cefd3b4d89d95412ce4c0 1531 main/binary-amd64/Packages.gz
+ 06e980325ca1d347d0ff3c7d1562d625eff04e86b03fcb973d18e0a6bfe5fbf7 5143 main/binary-amd64/Packages
+ fbab6d7e0be7b8816d6e75b5bd25a2d572acadd868accd8185f148004876c6d4 1942 main/binary-amd64/Packages.gz
  ac31c533fc27b86d35dc7ab0879bebad33b16bd278c837c8560bae5277bfc889 112 main/binary-amd64/Release
- 4f4ec0cbd408c5d02ecada6ddeeb29fcf04e8e012eedd0fbd6d592349723241d 4899 main/binary-arm64/Packages
- 0d190a87aac763cd83faa6fd191a64c445fa20233de48a8d5a88eb4c6ddbed79 1824 main/binary-arm64/Packages.gz
+ 995a62ee65587a27ce322ac945bb82b84ef9107b4e597fff2ffe224751018d09 5791 main/binary-arm64/Packages
+ 97782ee1f26c4b84ad294525a93a48d95d675747fb363914391f74daff9fc98a 2214 main/binary-arm64/Packages.gz
  6ffefa106d84361a78b5bb0bd39a33374524d8c96c3c23bec913645bcdc5b2ad 112 main/binary-arm64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYKAB0WIQSM2aqs7ota+3YHvCswD9m92hv4CQUCaqCVTAAKCRAwD9m92hv4
-CTDBAP9eWWu9nCTTo16LC/tyQAHHIuY189TzdvVF0WbN1gWy4AEAw+DEyNzX3Ozy
-MxbCBVf28JGct3/5415hwvqm7FXVNg0=
-=qBFm
+iHUEARYKAB0WIQSM2aqs7ota+3YHvCswD9m92hv4CQUCaqfUMQAKCRAwD9m92hv4
+CRsLAQDXVThA6QU5GzTa7GW2rJeSiyqPUM5VmAQA4tuxlU3UGgEA6lX4sgH+1wGI
+aY88vIYNrk7DYQceV/BKa1LNUDiPcg0=
+=UJGr
 -----END PGP SIGNATURE-----
