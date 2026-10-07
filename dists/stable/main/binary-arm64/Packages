@@ -109,7 +109,7 @@ MD5sum: fc04998b9c20ce1652d83ae66237a898
 Description: METAR aviation weather decoder
 
 Package: parzival
-Version: 0.2.0
+Version: 0.2.1
 Architecture: arm64
 Maintainer: Kevin P. Inscoe <kevin.inscoe@gmail.com>
 Installed-Size: 15576
@@ -117,11 +117,11 @@ Recommends: systemd
 Homepage: https://github.com/kevinpinscoe/parzival
 Priority: optional
 Section: utils
-Filename: pool/main/p/parzival/parzival_0.2.0_arm64.deb
-Size: 6462506
-SHA256: 8de228a08d7234bb9a37951861b3629335e693e769f2f3784dd0a02367e095b2
-SHA1: fc06217efb970dff7b9fed59d8279f0ab37dc836
-MD5sum: c7c66cff76495146670ca7e9aed2e146
+Filename: pool/main/p/parzival/parzival_0.2.1_arm64.deb
+Size: 6463536
+SHA256: b496534f2119818d10d06feda7bad270e8126e241edc063bbd4962aea6b7f56e
+SHA1: 48b335164df2bbd2e13770deb794296babd36215
+MD5sum: 8b9a57a5a19db5896ebcc88c93a29361
 Description: Secret broker / credential-leak prevention system. Delivers secrets
  from an encrypted store to the process that needs them at runtime,
  never at rest, with a per-request approval policy and audit log.
