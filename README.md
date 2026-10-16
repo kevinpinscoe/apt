@@ -19,6 +19,7 @@ Then install any available tool:
 
 ```bash
 sudo apt install aws-linux-memory-tools
+sudo apt install bao-policy-editor
 sudo apt install check-git-branch
 sudo apt install check-git-repos
 sudo apt install get-wx
@@ -32,8 +33,9 @@ sudo apt install skills-tui
 ## Available packages
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `aws-linux-memory-tools` | AWS Linux memory diagnostics |
+| `bao-policy-editor` | Terminal editor for OpenBao HCL ACL policies (installs `bpe`) |
 | `check-git-branch` | Scan git repos for non-default branches or leftover local branches |
 | `check-git-repos` | Scan git repositories under a root directory for ahead/behind/diverged/uncommitted state |
 | `get-wx` | Eastern Tennessee weather forecast fetcher |
