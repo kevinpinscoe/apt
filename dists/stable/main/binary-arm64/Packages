@@ -14,18 +14,18 @@ MD5sum: b6259d1f5f8916ab6663f41e93e9bded
 Description: AWS Linux memory diagnostics
 
 Package: bao-policy-editor
-Version: 0.1.0
+Version: 0.1.1
 Architecture: arm64
 Maintainer: Kevin P. Inscoe <kevin.inscoe@gmail.com>
-Installed-Size: 10688
+Installed-Size: 10717
 Homepage: https://github.com/kevinpinscoe/bao-policy-editor
 Priority: optional
-Section: 
-Filename: pool/main/b/bao-policy-editor/bao-policy-editor_0.1.0_arm64.deb
-Size: 4168914
-SHA256: 199359f411439ef479a7c5627d073d2372a52b4dbc55df5be2f739590f70522e
-SHA1: a26a84f8775670875d4063fc50c32bacd3b0675e
-MD5sum: 1420b2bcd35c2bb9c83834a598039231
+Section: admin
+Filename: pool/main/b/bao-policy-editor/bao-policy-editor_0.1.1_arm64.deb
+Size: 4176904
+SHA256: 2524be70d60e9ed3aac8d313d2d0c895d7a92df9b26a34b94b9235774503fe87
+SHA1: 2b181dcfefc04969b0abbe46717d77e181ce9056
+MD5sum: 5bffee7c92d043ae7bf01493dee3273e
 Description: Terminal editor for OpenBao HCL ACL policies
 
 Package: check-git-branch
